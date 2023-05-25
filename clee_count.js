@@ -3,8 +3,13 @@ function updateTimeCounter() {
     const currentYear = currentDate.getFullYear();
     const targetMonth = 4;
     const targetDay = 25;
-    
-    const targetDateTime = new Date(currentYear, targetMonth, targetDay);
+    var targetYear = currentYear;
+
+    if (currentDate >= new Date(currentYear,targetMonth,targetDay,23,59,59,999)){
+        targetYear =  currentYear +1;
+    }
+
+    const targetDateTime = new Date(targetYear, targetMonth, targetDay);
     const timeDifference = targetDateTime - currentDate;
     
     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -20,10 +25,11 @@ function updateTimeCounter() {
       (currentDate.getMonth() === targetMonth && currentDate.getDate() === targetDay) ||
       (currentDate > targetDateTime && currentDate <= new Date(currentYear, targetMonth, targetDay, 23, 59, 59, 999))
     ) {
-      timeElement.innerHTML = "IT IS CLEE DAY!";
+      yearElement.innerHTML = `clee day - ` + targetDateTime.getFullYear();
+      timeElement.innerHTML = "is TODAY!!!!!!";
     } else {
-      timeElement.innerHTML = `Time until the next clee day: ${timeUntilTarget} (current date: ${currentDate})`;
-      yearElement.innerHTML = targetDateTime.getFullYear();
+      yearElement.innerHTML = `clee day - ` + targetDateTime.getFullYear();
+      timeElement.innerHTML = `is in: ${timeUntilTarget}`;
     }
   }
   
