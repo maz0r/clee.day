@@ -14,14 +14,16 @@ function updateTimeCounter() {
     
     const timeUntilTarget = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     
-    const timeCounterElement = document.getElementById("time-counter");
+    const timeElement = document.getElementById("time-counter");
+    const yearElement = document.getElementById("time-year");
     if (
       (currentDate.getMonth() === targetMonth && currentDate.getDate() === targetDay) ||
       (currentDate > targetDateTime && currentDate <= new Date(currentYear, targetMonth, targetDay, 23, 59, 59, 999))
     ) {
-      timeCounterElement.innerHTML = "It is clee day!";
+      timeElement.innerHTML = "IT IS CLEE DAY!";
     } else {
-      timeCounterElement.innerHTML = `Time until the next clee day: ${timeUntilTarget} (current date: ${currentDate})`;
+      timeElement.innerHTML = `Time until the next clee day: ${timeUntilTarget} (current date: ${currentDate})`;
+      yearElement.innerHTML = targetDateTime.getFullYear();
     }
   }
   

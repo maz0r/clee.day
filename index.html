@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Time Until Counter</title>
+    <title>Clee Day</title>
+    <style>
+        body {
+            background-image: url('./images/clee-bg-tile.png');
+            background-repeat: repeat;
+        }
+        
+        #time-year {
+            font-size: 100px;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as desired */
+            padding: 10px;
+            margin: 0;
+            position: relative;
+            top: 200px;
+        }
+        
+        #time-counter {
+            font-size: 75px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as desired */
+            padding: 10px;
+            margin: 0;
+            position: relative;
+            top: 200px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Time Until Counter</h1>
+    <h1 id="time-year"></h1>
+    
     <p id="time-counter"></p>
 
     <script src="clee_count.js"></script>
