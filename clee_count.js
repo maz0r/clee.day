@@ -3,9 +3,10 @@ function updateTimeCounter() {
     const currentYear = currentDate.getFullYear();
     const targetMonth = 4;
     const targetDay = 25;
+    const targetEndDay = 26;
     var targetYear = currentYear;
 
-    if (currentDate >= new Date(Date.UTC(currentYear,targetMonth,targetDay+1,6,59,59,999)){
+    if (currentDate >= new Date(currentYear,targetMonth,targetEndDay,6,59,59,999)){
         targetYear =  currentYear +1;
     }
   
@@ -24,7 +25,7 @@ function updateTimeCounter() {
     const yearElement = document.getElementById("time-year");
     if (
       (currentDate.getMonth() === targetMonth && currentDate.getDate() === targetDay) ||
-      (currentDate > targetDateTime && currentDate <= new Date(currentYear, targetMonth, targetDay+1, 06, 59, 59, 999))
+      (currentDate > targetDateTime && currentDate <= new Date(currentYear, targetMonth, targetEndDay, 06, 59, 59, 999))
     ) {
       yearElement.innerHTML = `clee day - ` + targetDateTime.getFullYear();
       timeElement.innerHTML = "is TODAY!!!!!!";
