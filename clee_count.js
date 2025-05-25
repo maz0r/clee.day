@@ -5,7 +5,7 @@ function updateTimeCounter() {
     const targetDay = 25;
     var targetYear = currentYear;
 
-    if (currentDate >= new Date(currentYear,targetMonth,targetDay,23,59,59,999)){
+    if (currentDate >= new Date(Date.UTC(currentYear,targetMonth,targetDay+1,6,59,59,999)){
         targetYear =  currentYear +1;
     }
   
